@@ -1,8 +1,13 @@
 import React from 'react';
 import Nav from './nav';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import Tutorials from './tutorials';
 import Home from './home';
+import BlogPost from './blog-post';
+import TutorialPost from './tutorial-post';
+import Login from './login';
+import Register from './register';
+import Blog from './blog';
+import Tutorials from './tutorials';
 
 class App extends React.Component {
     render() {
