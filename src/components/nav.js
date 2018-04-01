@@ -15,15 +15,15 @@ class Nav extends React.Component {
                             <Link to="/tutorials" className="nav-link">Tutorials</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/" className="nav-link">Blog</Link>
+                            <Link to="/blog" className="nav-link">Blog</Link>
                         </li>
                     </ul>
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <Link to="/" className="nav-link">Login</Link>
+                            <Link to="/login" className="nav-link">Login</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/" className="nav-link">Register</Link>
+                            <Link to="/register" className="nav-link">Register</Link>
                         </li>
                     </ul>
                 </div>
