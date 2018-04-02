@@ -8,11 +8,12 @@ class Register extends React.Component {
     renderField(field) {
         const { meta: { touched, error } } = field
         const className = `form-group ${touched && error ? 'has-danger' : ''}`
+        const danger = `form-control ${touched && error ? 'danger':''}`
         return (
             <div className={className}>
                 <label>{field.label}</label>
                 <input
-                    className="form-control"
+                    className={danger}
                     type={field.type}
                     {...field.input}
                 />
@@ -32,6 +33,7 @@ class Register extends React.Component {
     render() {
 
         const { handleSubmit } = this.props
+        const register = this.props.registerResult;
 
         return (
             <div>
@@ -67,6 +69,9 @@ class Register extends React.Component {
                         component={this.renderField}
                     />
                     <button type="submit" className="btn submit-custom">Dołącz</button>
+                    <div>
+                        {this.props.register ? register : ''}
+                    </div>
                 </form>
             </div>
         )
@@ -75,10 +80,6 @@ class Register extends React.Component {
 
 function validate(values) {
     const errors = {}
-
-
-
-
 
     if (!values.name) {
         errors.name = "Pole jest wymagane!!!"
@@ -93,7 +94,7 @@ function validate(values) {
     if (!values.password) {
         errors.password = "Pole jest wymagane!!!";
     } else {
-        if (values.password.length < 5) {
+        if (values.password.length < 6) {
             errors.password = "Hasło musi zawierać przynajmniej 6 znaków"
         }
     }
