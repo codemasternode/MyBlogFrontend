@@ -16,3 +16,7 @@ nav{
 .submit-custom{
     background: #558ae0;
 }
+
+.has-help {
+    color: red;
+}
