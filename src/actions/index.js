@@ -8,15 +8,15 @@ export default function registerUser(user, callbackOnTrue) {
     const registerURL = `${AuthURL}/register`;
 
     const request = axios.post(registerURL, user).then(
-        (respone) => {
-            console.log('To jest odpowiedź',respone);
-            if (respone.success == true) {
+        (response) => {
+            console.log('To jest odpowiedź ',response);
+            console.log('To jest żądanie ',request);
+            if (response.data.success == true) {
                 callbackOnTrue()
             } 
         }
     );
-
-    return {
+    return { 
         type: register,
         payload: request
     }
