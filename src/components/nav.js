@@ -5,7 +5,9 @@ class Nav extends React.Component {
     render() {
         return (
             <nav className="navbar navbar-expand-md custom-navbar">
-                <a className="navbar-brand">MyBlog</a>
+                <a className="navbar-brand">
+                    <img src="../../assets/mybloglogofooter.png" alt="logonav"/>
+                </a>
                 <div className="collapse navbar-collapse" id="slide">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">

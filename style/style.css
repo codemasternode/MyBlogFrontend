@@ -1,0 +1,14 @@
+.custom-navbar{
+    background: #505763;
+}
+.nav-link{
+    color: white !important;
+}
+.navbar-brand{
+    margin-right: 4em !important;
+}
+
+nav{
+    font-size: 20px;
+    font-variant: small-caps;
+}
