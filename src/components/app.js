@@ -8,6 +8,7 @@ import Login from './login';
 import Register from './register';
 import Blog from './blog';
 import Tutorials from './tutorials';
+import Footer from './footer';
 
 class App extends React.Component {
     render() {
@@ -24,6 +25,7 @@ class App extends React.Component {
                         <Route path="/tutorials" component={Tutorials} />
                         <Route path="/" component={Home} />
                     </Switch>
+                    <Footer />
                 </div>
             </BrowserRouter>
 

@@ -22,13 +22,22 @@ nav{
 }
 
 form{
-    width: 80%;
-    padding: 2em 1em;
+    width: 100%;
+    padding: 4em 5em;
     margin-left: auto;
     margin-right: auto;
-    max-width: 800px;
+    max-width: 1000px;
     margin-top: 3em;
+    background: #505763;
+    border-radius: 5px;
+    color: white;
 }
 .danger{
     border: 2px solid red !important;
+}
+button{
+    color: white;
+    padding: 2em 4em;
+    margin-top: 30px !important;
+    font-variant: small-caps;
 }

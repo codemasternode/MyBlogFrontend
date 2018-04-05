@@ -8,7 +8,8 @@ class Register extends React.Component {
     renderField(field) {
         const { meta: { touched, error } } = field
         const className = `form-group ${touched && error ? 'has-danger' : ''}`
-        const danger = `form-control ${touched && error ? 'danger':''}`
+        const danger = `form-control ${touched && error ? 'danger':''}` 
+        
         return (
             <div className={className}>
                 <label>{field.label}</label>
@@ -30,14 +31,23 @@ class Register extends React.Component {
         })
     }
 
+    renderResult(){
+        if(this.props.registerResult){
+            return (
+                <div className="register-result">
+                    {this.props.registerResult}
+                </div>
+            )
+        }
+    }
+
     render() {
 
         const { handleSubmit } = this.props
-        const register = this.props.registerResult;
 
         return (
             <div>
-                <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                <form onSubmit={handleSubmit(this.onSubmit.bind(this))} noValidate>
                     <Field
                         label="Name"
                         name="name"
@@ -54,6 +64,7 @@ class Register extends React.Component {
                         label="Email"
                         name="email"
                         type="email"
+                        formnovalidate="formnovalidate"
                         component={this.renderField}
                     />
                     <Field
@@ -69,9 +80,7 @@ class Register extends React.Component {
                         component={this.renderField}
                     />
                     <button type="submit" className="btn submit-custom">Dołącz</button>
-                    <div>
-                        {this.props.register ? register : ''}
-                    </div>
+                    {this.renderResult.bind(this)}
                 </form>
             </div>
         )
@@ -90,6 +99,18 @@ function validate(values) {
 
     if (!values.email) {
         errors.email = "Pole jest wymagane!!!";
+
+    }else{
+        var monkey = "@";
+        if(!values.email.includes(monkey)){
+            errors.email = "Proszę wprowadzić prawidłowy email"
+        }else{
+            const monkeyPos = values.email.indexOf(monkey);
+            console.log(values.email.slice(monkeyPos + 1).length)
+            if(values.email.split(monkey)[0].length == 0 || values.email.slice(monkeyPos + 1).length == 0){
+                errors.email = "Proszę wprowadzić prawidłowy email"
+            }
+        }
     }
     if (!values.password) {
         errors.password = "Pole jest wymagane!!!";

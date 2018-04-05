@@ -1,10 +1,13 @@
 import { register } from '../actions/index'
 
-export default function (state = {}, action) {
+export default function (state = {
+    
+}, action) {
     switch (action.type) {
         case register:
-            console.log(action)
-            return state;
+            const newstate = action.status;
+            console.log('Stan  ',newstate)
+            return newstate;
         default:
             return state;
     }

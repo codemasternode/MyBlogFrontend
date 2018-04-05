@@ -12,12 +12,12 @@ export default function registerUser(user, callbackOnTrue) {
             if (response.data.success == true) {
                 callbackOnTrue()
             }
+            console.log(odp)
         }
     );
-    
-    return { 
+    return {
         type: register,
-        payload: request
+        payload: null
     }
-
+    
 }
