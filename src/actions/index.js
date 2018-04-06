@@ -43,17 +43,21 @@ export default function registerUser(user, callbackOnTrue) {
     return (dispatch) => {
         axios.post(registerURL, user)
             .then((response) => {
-                console.log(response.response.data.message)
-                dispatch(registerSuc(response));
+                const res = response.data;
+                dispatch(registerSuc(res));
+                console.log(res.message)
             })
             .catch((response) => {
-                console.log(response.response.data.message)
-                if (response.data.message.includes("Email")) {
-                    dispatch(registerEmailFailed(response))
-                } else if (response.data.message.includes("Username")) {
-                    dispatch(registerUsernameFailed(response))
+                const res = response.response.data;
+                if (res.message.includes("Email")) {
+                    dispatch(registerEmailFailed(res))
+                    console.log(res.message)
+                } else if (res.message.includes("Username")) {
+                    dispatch(registerUsernameFailed(res))
+                    console.log(res.message)
                 } else {
-                    dispatch(registerFailed(response))
+                    dispatch(registerFailed(res))
+                    console.log(res.message)
                 }
             })
     }

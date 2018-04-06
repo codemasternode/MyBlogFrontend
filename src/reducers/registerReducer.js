@@ -9,17 +9,17 @@ export default function (state = initState, action) {
     switch (action.type) {
         case actions.registerSuccess:
             return {
-                ...state, success: true, message: action.payload.data.message
+                ...state, success: true, message: action.payload.message
             }
         case actions.registerFail:
             return state;
         case actions.registerEmailFail:
             return {
-                ...state, success: false, message: action.payload.data.message
+                ...state, success: false, message: action.payload.message
             }
         case actions.registerUsernameFail:
             return {
-                ...state, success: false, message: action.payload.data.message
+                ...state, success: false, message: action.payload.message
             }
         default:
             return state;
