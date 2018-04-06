@@ -18,7 +18,7 @@ nav{
 }
 
 .text-help{
-    color: red;
+    color: rgb(219, 47, 47);
 }
 
 form{
@@ -40,4 +40,13 @@ button{
     padding: 2em 4em;
     margin-top: 30px !important;
     font-variant: small-caps;
+}
+
+.registerResult{
+    padding: 0.5em 2em;
+    background: rgb(216, 54, 42);
+    border: 2px solid red;
+    border-radius: 1px;
+    margin-top: 2em;
+    margin-bottom: 1em;
 }

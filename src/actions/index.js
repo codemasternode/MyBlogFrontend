@@ -45,8 +45,8 @@ export default function registerUser(user, callbackOnTrue) {
             .then((response) => {
                 const res = response.data;
                 dispatch(registerSuc(res));
-                
             })
+            .then(() => callbackOnTrue())
             .catch((response) => {
                 const res = response.response.data;
                 if (res.message.includes("Email")) {

@@ -36,12 +36,11 @@ class Register extends React.Component {
         })
     }
 
-    componentWillUpdate() {
-        console.log(this.props.registerResult.message)
-    }
-
     renderResult() {
-        return <div>{this.props.registerResult.message}</div>
+        if(this.props.registerResult.success == false){
+            return <div className="registerResult">{this.props.registerResult.message}</div>
+        }
+        return <div></div> 
     }
 
     render() {
@@ -85,10 +84,11 @@ class Register extends React.Component {
                         type="password"
                         component={this.renderField}
                     />
-                    <button type="submit" className="btn submit-custom">Dołącz</button>
                     
+                    {this.renderResult()}
+                    <button type="submit" className="btn submit-custom">Dołącz</button>
                 </form>
-                {this.renderResult()}
+                
             </div>
         )
     }
