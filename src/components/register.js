@@ -106,7 +106,6 @@ function validate(values) {
             errors.email = "Proszę wprowadzić prawidłowy email"
         }else{
             const monkeyPos = values.email.indexOf(monkey);
-            console.log(values.email.slice(monkeyPos + 1).length)
             if(values.email.split(monkey)[0].length == 0 || values.email.slice(monkeyPos + 1).length == 0){
                 errors.email = "Proszę wprowadzić prawidłowy email"
             }
