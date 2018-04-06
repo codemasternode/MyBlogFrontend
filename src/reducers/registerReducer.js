@@ -2,24 +2,31 @@ import * as actions from '../actions/index'
 
 const initState = {
     success: false,
-    message: "Usługa rejestrująca nie jest teraz dostępna"
+    message: ""
 }
 
 export default function (state = initState, action) {
     switch (action.type) {
         case actions.registerSuccess:
+            console.log('udało się')
             return {
-                ...state, success: true, message: action.payload.message
+                success: true, message: action.payload.message
             }
         case actions.registerFail:
-            return state;
-        case actions.registerEmailFail:
+            console.log('cos innego')
             return {
-                ...state, success: false, message: action.payload.message
+                success: false,
+                message: 'Usługa rejestrująca nie jest teraz dostępna'
+            };
+        case actions.registerEmailFail:
+            console.log('email')
+            return {
+                success: false, message: action.payload.message
             }
         case actions.registerUsernameFail:
+            console.log('username')
             return {
-                ...state, success: false, message: action.payload.message
+                success: false, message: action.payload.message
             }
         default:
             return state;

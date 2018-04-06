@@ -45,19 +45,19 @@ export default function registerUser(user, callbackOnTrue) {
             .then((response) => {
                 const res = response.data;
                 dispatch(registerSuc(res));
-                console.log(res.message)
+                
             })
             .catch((response) => {
                 const res = response.response.data;
                 if (res.message.includes("Email")) {
                     dispatch(registerEmailFailed(res))
-                    console.log(res.message)
+                    
                 } else if (res.message.includes("Username")) {
                     dispatch(registerUsernameFailed(res))
-                    console.log(res.message)
+                    
                 } else {
                     dispatch(registerFailed(res))
-                    console.log(res.message)
+                    
                 }
             })
     }

@@ -5,11 +5,16 @@ import registerUser from '../actions/index';
 
 class Register extends React.Component {
 
+    constructor() {
+        super();
+        this.renderResult = this.renderResult.bind(this);
+    }
+
     renderField(field) {
         const { meta: { touched, error } } = field
         const className = `form-group ${touched && error ? 'has-danger' : ''}`
-        const danger = `form-control ${touched && error ? 'danger':''}` 
-        
+        const danger = `form-control ${touched && error ? 'danger' : ''}`
+
         return (
             <div className={className}>
                 <label>{field.label}</label>
@@ -31,19 +36,20 @@ class Register extends React.Component {
         })
     }
 
-    renderResult(){
-        if(this.props.registerResult){
-            return (
-                <div className="register-result">
-                    {this.props.registerResult}
-                </div>
-            )
-        }
+    componentWillUpdate() {
+        console.log(this.props.registerResult.message)
+    }
+
+    renderResult() {
+        return <div>{this.props.registerResult.message}</div>
     }
 
     render() {
 
         const { handleSubmit } = this.props
+
+
+
 
         return (
             <div>
@@ -80,8 +86,9 @@ class Register extends React.Component {
                         component={this.renderField}
                     />
                     <button type="submit" className="btn submit-custom">Dołącz</button>
-                    {this.renderResult.bind(this)}
+                    
                 </form>
+                {this.renderResult()}
             </div>
         )
     }
@@ -100,13 +107,13 @@ function validate(values) {
     if (!values.email) {
         errors.email = "Pole jest wymagane!!!";
 
-    }else{
+    } else {
         var monkey = "@";
-        if(!values.email.includes(monkey)){
+        if (!values.email.includes(monkey)) {
             errors.email = "Proszę wprowadzić prawidłowy email"
-        }else{
+        } else {
             const monkeyPos = values.email.indexOf(monkey);
-            if(values.email.split(monkey)[0].length == 0 || values.email.slice(monkeyPos + 1).length == 0){
+            if (values.email.split(monkey)[0].length == 0 || values.email.slice(monkeyPos + 1).length == 0) {
                 errors.email = "Proszę wprowadzić prawidłowy email"
             }
         }
@@ -129,8 +136,10 @@ function validate(values) {
     return errors;
 }
 
-function mapStateToProps({ registerResult }) {
-    return { registerResult };
+function mapStateToProps({registerResult}) {
+    return {
+        registerResult
+    };
 }
 
 export default reduxForm({
