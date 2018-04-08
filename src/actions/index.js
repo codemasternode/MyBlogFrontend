@@ -4,7 +4,7 @@ export const registerSuccess = 'registerSuccess';
 export const registerEmailFail = 'registerEmailFail'
 export const registerUsernameFail = 'registerUsernameFail'
 export const registerFail = 'registerFail';
-const RootURL = 'http://localhost:8081/api'
+export const RootURL = 'http://localhost:8081/api'
 const AuthURL = `${RootURL}/auth`;
 const checkUser = `${AuthURL}/checkUser`;
 
