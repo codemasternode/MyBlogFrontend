@@ -15,12 +15,15 @@ class Tutorials extends React.Component {
 
     renderList() {
         return _.map(this.props.tutorials, tutorial => {
+            const color = {
+                background: tutorial.tutorialCategory.color
+            }
             return (
-                <li key={tutorial.id}>
-                    <div>
-                        <h3>{tutorial.title}</h3>
+                <li className="list-group-item" key={tutorial.id}>
+                    <div style={color}>
                         <img src={tutorial.imageUrl} />
-                        <div>
+                        <div className="tutorial-overview">
+                            <h2 className="header">{tutorial.title}</h2>
                             <p>{tutorial.overview}</p>
                         </div>
                     </div>
@@ -32,8 +35,8 @@ class Tutorials extends React.Component {
 
     render() {
         return (
-            <div>
-                <ul>
+            <div className="container custom-tutorials">
+                <ul className="list-group">
                     {this.renderList()}
                 </ul>
             </div>

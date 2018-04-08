@@ -50,3 +50,23 @@ button{
     margin-top: 2em;
     margin-bottom: 1em;
 }
+
+.custom-tutorials {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+
+.custom-tutorials img {
+    width: 100%;
+    height: auto;
+}
+
+.tutorial-overview {
+    border-top: 1px solid #505763;
+    padding: 3em 2em 5em 2em;
+}
+
+.list-group-item {
+    padding: 0 !important;
+}
