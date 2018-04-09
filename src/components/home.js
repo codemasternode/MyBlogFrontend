@@ -18,13 +18,12 @@ class Home extends React.Component {
     render() {
         return (
             <div className="content-wrapper">
-                <img src="../../assets/tlonastrone.jpg" id="tlo" />
+                <img src="../../assets/gory-w-ciazy.jpg" id="tlo" />
                 <div className="container">
                     <div className="custom-home">
                         <h3>Tutoriale</h3>
                         <div className="row">
-
-                            <br />
+                            <hr />
                             {this.renderHomeTutorials()}
                         </div>
                     </div>
