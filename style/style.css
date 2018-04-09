@@ -70,3 +70,39 @@ button{
 .list-group-item {
     padding: 0 !important;
 }
+
+#tlo {
+    width: 100%;
+    z-index: 1;
+    height: auto;
+}
+
+@media screen and (max-width: 500px){
+    #tlo {
+        display: none;
+    }
+    .custom-home {
+        width: 100% !important;
+        left: 0 !important;
+    }
+}
+
+.content-wrapper {
+    width: 100% !important;
+    position: relative;
+    background-color: #558ae0;
+}
+
+.containter {
+    position: relative;
+}
+
+
+.custom-home {
+    background-color: white;
+    position: absolute;
+    width:75%;
+    top: 60%;
+    z-index: 2;
+    left: 12.5%;
+}
