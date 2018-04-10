@@ -16,7 +16,8 @@ class Tutorials extends React.Component {
     renderList() {
         return _.map(this.props.tutorials, tutorial => {
             const color = {
-                background: tutorial.tutorialCategory.color
+                background: tutorial.tutorialCategory.color,
+                'border-radius': '5px'
             }
             return (
                 <li className="list-group-item" key={tutorial.id}>
@@ -36,6 +37,7 @@ class Tutorials extends React.Component {
     render() {
         return (
             <div className="container custom-tutorials">
+                <h1 id="title">Tutoriale</h1>
                 <ul className="list-group">
                     {this.renderList()}
                 </ul>
