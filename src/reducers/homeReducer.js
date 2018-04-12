@@ -3,8 +3,7 @@ import * as home from '../actions/home';
 const initState = {
     success: false,
     errorCode: null,
-    tutorials: [],
-    blogPosts: []
+    tutorials: []
 }
 
 
@@ -16,13 +15,6 @@ export default function (state = initState, action) {
                 ...state,
                 success: true,
                 tutorials: action.tutorials
-            }
-        case home.homeFetchBlogPostsSuccess:
-            console.log(action.blogPosts)
-            return {
-                ...state,
-                success: true,
-                blogPosts: action.blogPosts
             }
         case home.homeFetchFail:
             return {

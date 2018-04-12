@@ -52,12 +52,8 @@ export default function registerUser(user, callbackOnTrue) {
                 if (res.message.includes("Email")) {
                     dispatch(registerEmailFailed(res))
                     
-                } else if (res.message.includes("Username")) {
-                    dispatch(registerUsernameFailed(res))
-                    
                 } else {
-                    dispatch(registerFailed(res))
-                    
+                    dispatch(registerUsernameFailed(res))
                 }
             })
     }

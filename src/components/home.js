@@ -12,7 +12,6 @@ class Home extends React.Component {
 
     componentDidMount() {
         this.props.fetchHomeTutorials();
-        this.props.fetchHomeBlogPosts();
     }
 
     componentDidUpdate() {
@@ -28,7 +27,10 @@ class Home extends React.Component {
 
                     <div key={tutorial.id} className="col-lg-6 col-sm-12 col-md-6 col-xl-6">
                         <img src={tutorial.imageUrl} />
-                        <h2>{tutorial.title}</h2>
+                        <div className="homek">
+                            <h3>{tutorial.title}</h3>
+                            <p>{tutorial.overview}</p>
+                        </div>
                     </div>
 
                 )
@@ -41,14 +43,14 @@ class Home extends React.Component {
         return (
             <div className="content-wrapper">
                 <img src="../../assets/gory-w-ciazy.jpg" id="tlo" />
-                
-                    <div className="custom-home">
-                        <h1 id="title">Tutoriale</h1>
-                        <div className="row">
-                            {this.renderHomeTutorials()}
-                        </div>
+
+                <div className="custom-home">
+                    <h1 id="title">Tutoriale</h1>
+                    <div className="row">
+                        {this.renderHomeTutorials()}
                     </div>
-                
+                </div>
+
             </div>
         )
     }
