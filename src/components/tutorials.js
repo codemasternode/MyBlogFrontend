@@ -13,11 +13,19 @@ class Tutorials extends React.Component {
         this.props.fetchTutorials();
     }
 
+    componentDidUpdate() {
+        if (this.props.tutorials) {
+            _.map(this.props.tutorials, tutorial => {
+                console.log(tutorial.id)
+            })
+        }
+    }
+
     renderList() {
         return _.map(this.props.tutorials, tutorial => {
             const color = {
                 background: tutorial.tutorialCategory.color,
-                'border-radius': '5px'
+                'borderRadius': '5px'
             }
             return (
                 <li className="list-group-item" key={tutorial.id}>

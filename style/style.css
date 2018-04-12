@@ -73,7 +73,9 @@ button{
 
 #tlo {
     width: 100%;
-    z-index: 1;
+    z-index: -1;
+    top: -10%;
+    position: absolute;
     height: auto;
 }
 
@@ -90,23 +92,21 @@ button{
 .content-wrapper {
     width: 100% !important;
     position: relative;
+    z-index: -2;
     background-color: #558ae0;
-}
-
-.containter {
-    position: relative;
+    padding-top: 20%;
 }
 
 
 .custom-home {
     background-color: white;
-    position: absolute;
-    width:75%;
-    top: 60%;
+    width:80%;
+    top: 20%;
+    left: 10%;
     z-index: 2;
-    left: 12.5%;
     padding: 2em 1em 1em 1em;
     max-width: 1500px;
+    position: relative;
 }
 .custom-home h3 {
     text-align: center;
@@ -125,4 +125,9 @@ button{
     display: block;
     border-bottom: 2px solid #505763;
     padding-bottom: 12px;
+}
+
+.custom-home img{
+    width: 100%;
+    height: auto;
 }

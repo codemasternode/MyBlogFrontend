@@ -16,22 +16,21 @@ class Home extends React.Component {
     }
 
     componentDidUpdate() {
-        if (this.props.data.tutorials) {
-            _.map(this.props.data.tutorials, tutorial => {
-                console.log(tutorial.id)
-            })
+        if (this.props.data) {
+            console.log(this.props.data.tutorials.data)
         }
     }
 
     renderHomeTutorials() {
         return (
-            _.map(this.props.data.tutorials, tutorial => {
+            _.map(this.props.data.tutorials.data, tutorial => {
                 return (
-                    <div key={tutorial.id}>
-                        <div className="col-sm-12 col-md-6 col-lg-5">
-                            <img src={tutorial.title} />
-                        </div>
+
+                    <div key={tutorial.id} className="col-lg-6 col-sm-12 col-md-6 col-xl-6">
+                        <img src={tutorial.imageUrl} />
+                        <h2>{tutorial.title}</h2>
                     </div>
+
                 )
             })
 
@@ -42,15 +41,14 @@ class Home extends React.Component {
         return (
             <div className="content-wrapper">
                 <img src="../../assets/gory-w-ciazy.jpg" id="tlo" />
-                <div className="container">
+                
                     <div className="custom-home">
                         <h1 id="title">Tutoriale</h1>
                         <div className="row">
-                            <hr />
                             {this.renderHomeTutorials()}
                         </div>
                     </div>
-                </div>
+                
             </div>
         )
     }
