@@ -1,5 +1,5 @@
 .custom-navbar{
-    background: #505763;
+    background: #010000;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -19,7 +19,7 @@ nav{
 }
 
 .submit-custom{
-    background: #558ae0;
+    background: #01C5BF;
 }
 
 .text-help{
@@ -33,7 +33,7 @@ form{
     margin-right: auto;
     max-width: 1000px;
     margin-top: 3em;
-    background: #505763;
+    background: #010000;
     border-radius: 5px;
     color: white;
 }
@@ -68,7 +68,7 @@ button{
 }
 
 .tutorial-overview {
-    border-top: 1px solid #505763;
+    border-top: 1px solid #010000;
     padding: 3em 2em 10em 2em;
 }
 
@@ -98,7 +98,7 @@ button{
     width: 100% !important;
     position: relative;
     z-index: -2;
-    background-color: #558ae0;
+    background-color: #01C5BF;
     padding-bottom: 5em;
     padding-top: 20%;
 }
@@ -121,7 +121,7 @@ button{
 }
 .custom-home h3 {
     text-align: left;
-    border-bottom: 1px solid #74767a;
+    border-bottom: 1px solid #010000;
     padding-bottom: 3px;
     margin-bottom: 30px;
     
@@ -136,7 +136,7 @@ button{
     width: 100%;
     text-align: center;
     display: block;
-    border-bottom: 2px solid #505763;
+    border-bottom: 2px solid #010000;
     padding-bottom: 12px;
     margin-bottom: 2em;
     margin-top: 30px;

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import fetchTutorials from '../actions/tutorials';
 import _ from 'lodash';
+import { Link } from 'react-router-dom'
 
 class Tutorials extends React.Component {
     constructor() {
@@ -32,7 +33,9 @@ class Tutorials extends React.Component {
                     <div style={color}>
                         <img src={tutorial.imageUrl} />
                         <div className="tutorial-overview">
-                            <h2 className="header">{tutorial.title}</h2>
+                            <Link to={`/tutorials/${tutorial.id}`}>
+                               {tutorial.title}
+                            </Link>
                             <p>{tutorial.overview}</p>
                         </div>
                     </div>

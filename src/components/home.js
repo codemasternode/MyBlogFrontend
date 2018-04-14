@@ -16,11 +16,12 @@ class Home extends React.Component {
 
     componentDidUpdate() {
         if (this.props.data) {
-            console.log(this.props.data.tutorials.data)
+            console.log(this.props.data.tutorials.data.find(x => x.id === 6))
         }
     }
 
     renderHomeTutorials() {
+
         return (
             _.map(this.props.data.tutorials.data, tutorial => {
                 return (
@@ -40,6 +41,7 @@ class Home extends React.Component {
     }
 
     render() {
+        const array = this.props.data.tutorials.data
         return (
             <div className="content-wrapper">
                 <img src="../../assets/gory-w-ciazy.jpg" id="tlo" />
