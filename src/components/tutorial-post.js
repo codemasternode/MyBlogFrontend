@@ -13,8 +13,8 @@ class TutorialPost extends React.Component {
         if (this.props.tutorial.data) {
             const tutorial = this.props.tutorial.data
             return (
-                <div>
-                    {tutorial.title}
+                <div className="container">
+                    <h1>{tutorial.title}</h1>
                 </div>
             )
         }else{

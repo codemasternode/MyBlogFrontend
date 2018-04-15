@@ -31,10 +31,12 @@ class Tutorials extends React.Component {
             return (
                 <li className="list-group-item" key={tutorial.id}>
                     <div style={color}>
-                        <img src={tutorial.imageUrl} />
+                        <Link to={`/tutorials/${tutorial.id}`}>
+                            <img src={tutorial.imageUrl} />
+                        </Link>
                         <div className="tutorial-overview">
                             <Link to={`/tutorials/${tutorial.id}`}>
-                               {tutorial.title}
+                                {tutorial.title}
                             </Link>
                             <p>{tutorial.overview}</p>
                         </div>

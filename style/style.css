@@ -152,3 +152,7 @@ button{
     padding: 1em 1em;
     font-size: 15px;
 }
+a{
+    color: black !important;
+    text-decoration: none !important;
+}
