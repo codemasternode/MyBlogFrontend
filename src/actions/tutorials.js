@@ -3,6 +3,9 @@ import axios from 'axios';
 
 export const fetchSuccess = 'fetchSuccess';
 export const fetchFailed = 'fetchFailed';
+export const fetchSuccessTutorial = 'fetchSuccessTutorial';
+export const fetchFailedTutorial = 'fetchFailedTutorial';
+
 
 export function successFetching(res) {
     return {
@@ -15,6 +18,31 @@ export function failFetching(res) {
     return {
         type: fetchFailed,
         payload: res
+    }
+}
+
+export function successFetchingTutorial(res) {
+    return {
+        type: fetchSuccessTutorial,
+        payload: res
+    }
+}
+
+export function failedFetchingTutorial() {
+    return {
+        type: fetchFailedTutorial
+    }
+}
+
+export function fetchTutorial(id) {
+    const tutorialURL = `${RootURL}/tutorials/${id}`
+    return (dispatch) => {
+        axios.get(tutorialURL)
+            .then((response) => {
+                dispatch(successFetchingTutorial(response))
+            }).catch((response) => {
+                dispatch(failedFetchingTutorial())
+            })
     }
 }
 

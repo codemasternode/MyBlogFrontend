@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import fetchTutorials from '../actions/tutorials';
 import _ from 'lodash';
+import { Link } from 'react-router-dom'
 
 class Tutorials extends React.Component {
     constructor() {
@@ -30,9 +31,13 @@ class Tutorials extends React.Component {
             return (
                 <li className="list-group-item" key={tutorial.id}>
                     <div style={color}>
-                        <img src={tutorial.imageUrl} />
+                        <Link to={`/tutorials/${tutorial.id}`}>
+                            <img src={tutorial.imageUrl} />
+                        </Link>
                         <div className="tutorial-overview">
-                            <h2 className="header">{tutorial.title}</h2>
+                            <Link to={`/tutorials/${tutorial.id}`}>
+                                {tutorial.title}
+                            </Link>
                             <p>{tutorial.overview}</p>
                         </div>
                     </div>

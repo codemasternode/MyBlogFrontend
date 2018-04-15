@@ -1,14 +1,16 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import registerReducer from './registerReducer';
-import tutorialReducer from './tutorialsReducer';
+import tutorialsReducer from './tutorialsReducer';
 import homeReducer from './homeReducer';
+import tutorialReducer from './tutorialReducer';
 
 const rootReducer = combineReducers({
   form: formReducer,
   registerResult: registerReducer,
-  tutorials: tutorialReducer,
-  homeData: homeReducer
+  tutorials: tutorialsReducer,
+  homeData: homeReducer,
+  tutorial: tutorialReducer
 });
 
 export default rootReducer;
